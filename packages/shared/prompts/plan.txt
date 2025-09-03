@@ -1,0 +1,3 @@
+Create a brief bullet plan (max {{PLAN_MAX_BULLETS}} bullets) for answering the user query.
+Use the passages and conversation summary below.
+Output ONLY bullets, no prose, no explanations.

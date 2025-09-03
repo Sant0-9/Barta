@@ -1,0 +1,111 @@
+# ---- General OS/editor ----
+.DS_Store
+Thumbs.db
+*.log
+logs/
+.tmp/
+.tmp/**
+.temp/
+.cache/
+!.env.example
+.idea/
+.vscode/
+
+# ---- Environment files (keep .env.example tracked) ----
+.env
+.env.local
+.env.production.local
+.env.development.local
+.env.test.local
+.env.*.local
+
+# ---- Node / Next.js ----
+node_modules/
+.npm/
+.pnpm-store/
+*.tsbuildinfo
+.next/
+apps/*/.next/
+.next-cache/
+.turbo/
+dist/
+out/
+coverage/
+.vercel/
+.netlify/
+
+# ---- Package manager logs ----
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+.buildozer/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.tox/
+.venv/
+venv/
+env/
+.eggs/
+*.egg-info/
+.installed.cfg
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Distributions
+build/
+dist/
+wheels/
+share/python-wheels/
+
+# Coverage
+.coverage
+.coverage.*
+*,cover
+coverage.xml
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ---- Docker / Compose ----
+.docker/
+**/.env.docker.local
+**/.env.docker
+
+# ---- Terraform (if present) ----
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+crash.log
+
+# ---- Certificates / keys (sensitive) ----
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+
+# ---- Databases / dumps ----
+*.sqlite
+*.sqlite3
+*.db
+*.sql
+
+# ---- Misc tooling caches ----
+*.swp
+*.swo
+.eslintcache
+.stylelintcache
+node_modules/.cache/

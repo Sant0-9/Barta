@@ -1,0 +1,54 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      - POSTGRES_DB=barta
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_data:/data
+
+  api:
+    build:
+      context: .
+      dockerfile: infra/docker/api.Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=postgresql+psycopg://postgres:postgres@db:5432/barta
+      - REDIS_URL=redis://redis:6379/0
+      - API_PORT=8000
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - ./apps/api:/app/apps/api
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+  web:
+    build:
+      context: .
+      dockerfile: infra/docker/web.Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:
+  redis_data:
+
+# To run playwright install in the api container:
+# docker compose exec api bash
+# playwright install --with-deps

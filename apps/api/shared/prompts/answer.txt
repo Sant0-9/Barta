@@ -1,0 +1,3 @@
+Using the bullet plan, conversation summary, and passages, write the final answer.
+Enforce sections and inline citations [1],[2],… with a numbered Sources list.
+If a claim lacks support, say "not stated in sources".
