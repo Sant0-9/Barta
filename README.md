@@ -2,7 +2,7 @@
 
 A production-grade AI news assistant built with FastAPI, Next.js, PostgreSQL, and Redis.
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone and navigate to project
@@ -16,11 +16,11 @@ make health
 ```
 
 Visit:
-- 🌐 **Frontend**: http://localhost:3000
-- 🔧 **API**: http://localhost:8000/api/v1/health
-- 📊 **Metrics**: http://localhost:8000/api/v1/metrics
+- **Frontend**: http://localhost:3000
+- **API**: http://localhost:8000/api/v1/health
+- **Metrics**: http://localhost:8000/api/v1/metrics
 
-## 🏗️ Architecture
+## Architecture
 
 ### Backend (FastAPI)
 - **API**: Python 3.11, FastAPI, Uvicorn
@@ -38,7 +38,7 @@ Visit:
 - **Development**: Hot reload for both API and web
 - **Testing**: Pytest for backend, built-in Next.js testing
 
-## 🛠️ Development
+## Development
 
 ### Prerequisites
 - Docker & docker-compose
@@ -96,7 +96,7 @@ barta/
 └── pyproject.toml       # Python dependencies
 ```
 
-## 📦 Services
+## Services
 
 ### API Service
 - **Port**: 8000
@@ -118,7 +118,7 @@ barta/
 - **Port**: 6379
 - **Use**: Sessions, caching, pub/sub
 
-## 🔧 Configuration
+## Configuration
 
 Copy `.env.example` to `.env` and configure:
 
@@ -131,7 +131,7 @@ NEWS_API_KEY=your-news-api-key
 OPENAI_API_KEY=your-openai-api-key
 ```
 
-## 📰 Ingestion Quickstart
+## Ingestion Quickstart
 
 The production-ready ingestion pipeline fetches articles, extracts content, deduplicates, chunks, embeds, and stores in PostgreSQL with pgvector.
 
@@ -164,15 +164,15 @@ make embed-once
 
 ### Features
 
-- ✅ Full article extraction (not just RSS) using Playwright + Trafilatura
-- ✅ Near-duplicate detection via SimHash (Hamming distance ≤ 3)
-- ✅ Word-based chunking (800 words, 120 overlap)
-- ✅ Vector embeddings (3072-dim) with pgvector indexing
-- ✅ Full-text search with tsvector/GIN indexes
-- ✅ Deterministic fallback when OpenAI API key missing
-- ✅ CLI runners with comprehensive error handling
+- Full article extraction (not just RSS) using Playwright + Trafilatura
+- Near-duplicate detection via SimHash (Hamming distance ≤ 3)
+- Word-based chunking (800 words, 120 overlap)
+- Vector embeddings (3072-dim) with pgvector indexing
+- Full-text search with tsvector/GIN indexes
+- Deterministic fallback when OpenAI API key missing
+- CLI runners with comprehensive error handling
 
-## 🔍 Retrieval System
+## Retrieval System
 
 Production-grade hybrid retrieval combining BM25 full-text search and dense vector search with MMR diversification and cross-encoder reranking.
 
@@ -249,7 +249,7 @@ Prometheus metrics available at `/metrics`:
 - `retrieval_queries_total`: Total queries processed
 - `reranker_cache_hits/misses_total`: Cache performance
 
-## 💬 Chat & Memory
+## Chat & Memory
 
 AI-powered chat agent with two-pass answers, strict citations, conversation memory, and SSE streaming.
 
@@ -320,7 +320,7 @@ The React chat component (`apps/web/components/Chat.tsx`) provides:
 - Dark theme styling consistent with app design
 - Auto-scroll and loading states
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Backend tests (includes ingestion + retrieval tests)
@@ -331,7 +331,7 @@ curl http://localhost:8000/api/v1/health
 curl http://localhost:8000/api/v1/metrics
 ```
 
-## 🚀 Deployment
+## Deployment
 
 Production-ready with:
 - Multi-stage Docker builds
@@ -342,4 +342,4 @@ Production-ready with:
 
 ---
 
-**Status**: ✅ Basic skeleton complete - ready for feature development!
+**Status**: Basic skeleton complete - ready for feature development!
